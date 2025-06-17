@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("partials/header.ejs") %>
+<body class="bwaBody">
+  <%- include("partials/nav.ejs") %>
+  <br><br>
+  <h1>Armors</h1>
+
+    <form method="POST" action="/armors" autocomplete="off">
+      <button id="updateCollection">Save</button>
+      <div>
+        <%  x = 1 %>
+        <% for (let i of armors) { %>
+          <% if(x % 3 === 1) { %>
+            <div class="row">
+          <% } %>
+          <div class="col-md-4 itemView">
+            <div class="miniHeaders">
+              <p>
+              <input type="checkbox" name="item<%= x %>" value="<%= i.id %>"
+            <% for (let id of userCollection) { 
+                 if(i.id == id){ %>
+                   checked
+            <% }} %> >
+              <%= i.name %></p>
+            </div>
+              <br>
+              <div id="imgDescription">
+            <img id="armorImg" src="<%= i.image %>" alt="Armor Image">
+              <br><br>
+            <p><%= i.description %></p>
+              </div>
+          </div>
+          <% if(x % 3 === 0 || x === armors.length) { %>
+            </div>
+          <% } %>
+          <% x++ %>
+        <% } %>
+      </div>
+      </form>
+          
+  <br><br>
+  <%- include("partials/footer.ejs") %>
+
+</body>
+</html>

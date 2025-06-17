@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("partials/header.ejs") %>
+<body class="bwaBody">
+  <%- include("partials/nav.ejs") %>
+  <br><br>
+
+  <h1>Weapons</h1>
+
+
+    <form method="POST" action="/weapons" autocomplete="off">
+    <button id="updateCollection">Save</button>
+    <div>
+      <%  x = 1 %>
+      <% for (let i of weapons) { %>
+        <% if(x % 3 === 1) { %>
+          <div class="row">
+        <% } %>
+        <div class="col-md-4 itemView">
+          <div class="miniHeaders">
+            <p>
+            <input type="checkbox" name="item<%= x %>" value="<%= i.id %>"
+          <% for (let id of userCollection) { 
+               if(i.id == id){ %>
+                 checked
+          <% }} %> >
+            <%= i.name %></p>
+          </div>
+            <br>
+            <div id="imgDescription">
+          <img id="weaponImg" src="<%= i.image %>" alt="Weapon Image">
+            <br><br>
+          <p><%= i.description %></p>
+            </div>
+        </div>
+        <% if(x % 3 === 0 || x === weapons.length) { %>
+          </div>
+        <% } %>
+        <% x++ %>
+      <% } %>
+    </div>
+    </form>
+
+  
+
+  <br><br>
+  <%- include("partials/footer.ejs") %>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("partials/header.ejs") %>
+<body class="bwaBody" onload="listsToLoad(<%= userId %>)">
+  <%- include("partials/nav.ejs") %>
+  <br><br>
+
+  <h1> <%=user%>'s Collection</h1> <br>
+
+  <!-- <form method="POST" action="/collections" autocomplete="off">   -->
+    <div class="container"  id ="inventoryCss">
+      <div class="row">
+      <div id="bosses" class="col">
+        <h2>Bosses Felled</h2><hr>
+      </div>
+    
+      <div id="weapons" class="col">
+        <h2>Weapons Collected</h2><hr>
+      </div>
+    
+      <div id="armors" class="col">
+        <h2>Armors Collected</h2><hr>
+      </div>
+      </div>
+    </div>
+    <br>
+
+  <!-- </form> -->
+    
+  <br><br><br><br><br>
+  <%- include("partials/footer.ejs") %>
+</body>
+</html>

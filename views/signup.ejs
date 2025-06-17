@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<%- include("partials/header.ejs") %>
+<body id="loginBody">
+
+	<h1 id="ttl"> <b>Signup Screen</b> </h1>
+		 <br><br>
+
+	<div id="Info">
+
+	<form method="POST" action="/signup" autocomplete="off">
+		<span class="logintext"> <b>Username:</b>
+		<input class="logintext" type="text" name="username">
+			</span>
+		<% if (typeof(error) != "undefined") { %> 
+			<span class="logintext"> <%= error %> </span>
+		<% } %>
+		<br><br>
+		<span class="logintext"> <b>Password:</b>
+		<input type="password" name="password">
+		</span>
+		<br><br>
+		<button>
+			<span class ="loginButton"><b>Create Account</b></span>
+		</button>
+	</form>
+
+	<br>
+	<p class="signuptext"> Already have an account?</p>
+	<button onclick="window.location.href='/'">
+		<span class="loginButton"><b>Login</b> </span>
+	</button>
+
+		<br><br>
+
+
+	<%- include("partials/loginFooter.ejs") %>
+</body>
+</html>

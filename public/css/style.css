@@ -1,0 +1,140 @@
+body{
+  text-align: center;
+  background-color:#0f0f0f;
+  /* background-image: url('/images/homeImg.jpg'); */
+}
+
+#loginBody{
+  /* background-color: #2b2828; */
+  background-color: #1c1a1a;
+}
+#imgDescription{
+	align-items: center;
+	color: #1c1a1a;
+	display: inline-block;
+
+}
+#bossImg{
+  width: 400px;
+  height: 300px;
+}
+
+.bwaBody{
+  background-image: url('/images/bckER.jpg');
+  /* background-repeat: no-repeat; */
+  background-size: 100%;
+}
+.homeBody{
+  background-image: url('/images/homeImg.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 350%;
+}
+
+#inventoryCss{
+  background:#bdaa75; 
+  padding-top:2%
+}
+
+.contentInfo{
+  /* margin-left: 34%; */
+}
+
+.loginButton{
+  color: black;
+  font-family: "Lugrasimo", cursive;
+  font-weight: 4
+    00;
+  font-style: normal;
+}
+#homeImg{
+  width: 32% ;
+  height: 32%;
+}
+.miniHeaders{
+  background-color: #1c1a1a;
+  color: #9e8d5d;
+  font-family: "Lugrasimo", cursive;
+  font-weight: 400;
+  font-style: normal;
+  padding-top:3%;
+  font-size: 20px;
+  margin-inline:-3%
+}
+.logintext{
+  color: #9e8d5d;
+  font-family: "Lugrasimo", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.signuptext{
+  color: #9e8d5d;
+  font-family: "Lugrasimo", cursive;
+  font-weight: 150;
+  font-style: normal;
+}
+
+h1 {
+  margin-top:5%;
+  color: #9e8d5d;
+  font-family: "Lugrasimo", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#homeHeader{
+  margin-top:5%;
+  color: #9e8d5d;
+  font-family: "Lugrasimo", cursive;
+  font-weight: 400;
+  font-style: normal;
+  background-color: rgba(28, 63, 59, 0.9);
+  width: 40%;
+  margin-left: 30%;
+}
+
+#position{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+  /* padding: 100px 0; */
+  text-algin: center;
+  background-color:  #1c1a1a;
+  color: #bdaa75;
+  font-family: "Lugrasimo", cursive;
+}
+
+#ttl{
+  margin-top:15%
+}
+
+#updateCollection{
+  position:fixed;
+  margin-left:20%
+}
+
+.itemView {
+  border: 1px solid black;
+  width: 500px;
+  height: auto;
+  margin: 2%;
+  background-color: #bdaa75;
+}
+
+.loginFooter{
+  color: #1c1a1a
+}
+
+.btn-outline-color{
+  background-color: black;
+}
+
+.btn-outline-color:hover{
+  background-color: grey;
+  border-color: white;
+  color: white
+}
+
+.custom-navbar-color {
+  background-color: black;
+}

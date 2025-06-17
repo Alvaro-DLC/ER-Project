@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("partials/header.ejs") %>
+<body class="bwaBody">
+  <%- include("partials/nav.ejs") %>
+  <br><br>
+    
+  <h1>Bosses</h1>
+
+  <form method="POST" action="/bosses" autocomplete="off">
+  <button id="updateCollection">Save</button>
+  <div>
+    <% let x = 1 %>
+    <% for (let i of bosses) { %>
+      <% if(x % 3 === 1) { %>
+        <div class="row">
+      <% } %>
+      <div class="col-md-4 itemView">
+        <div class="miniHeaders">
+          <p>
+          <input type="checkbox" name="item<%= x %>" value="<%= i.id %>"
+        <% for (let id of userCollection) { 
+             if(i.id == id){ %>
+               checked
+        <% }} %> >
+          <%= i.name %></p>
+        </div>
+          <br>
+          <div id="imgDescription">
+        <img id="bossImg" src="<%= i.image %>" alt="Bosses Image">
+          <br><br>
+        <p><%= i.description %></p>
+          </div>
+      </div>
+      <% if(x % 3 === 0 || x === bosses.length) { %>
+        </div>
+      <% } %>
+      <% x++ %>
+    <% } %>
+  </div>
+  </form>
+
+
+  <br><br>
+  <%- include("partials/loginFooter.ejs") %>
+
+</body>
+</html>

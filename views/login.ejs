@@ -1,0 +1,42 @@
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <%- include("partials/header.ejs") %>
+        <body id="loginBody">
+
+          <h1 id="ttl"> <b>Login Screen</b> </h1>
+             <br><br>
+
+          <div id="Info">
+
+          <form method="POST" action="/login" autocomplete="off">
+            <span class="logintext"> <b>Username:</b>
+            <input class="logintext" type="text" name="username">
+            </span>
+            <br><br>
+            <span class="logintext"> <b>Password:</b>
+            <input type="password" name="password">
+            </span>
+            <br><br>
+            <button>
+              <span class ="loginButton"><b>Login</b></span>
+            </button>
+          </form>
+
+          <br>
+        <p class="signuptext">Don't have an account?</p>
+          </div>
+          <button onclick="window.location.href='/signup'">
+            <span class="loginButton"><b>Sign Up</b> </span>
+          </button>
+<br><br>
+          <% if (typeof(error) != "undefined") { %> 
+            <span class="logintext"> <%= error %> </span>
+          <% } %>
+
+            <br><br>
+
+
+          <%- include("partials/loginFooter.ejs") %>
+        </body>
+        </html>

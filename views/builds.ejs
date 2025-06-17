@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("partials/header.ejs") %>
+<body class="bwaBody">
+  <%- include("partials/nav.ejs") %>
+  <br><br>
+
+
+  <h1 >Custom Builds</h1>
+    <button onclick="displaybuildInfo()"> Make A Build </button>
+    
+    <div>
+      <%  x = 1 %>
+      <% for(let build of builds){ %>
+        <% if(x % 3 === 1) { %>
+          <div class="row">
+        <% } %>
+          <div class="col-md-4 itemView">
+            <div class="miniHeaders">
+              <p><%= build.username %>'s build</p><br>
+            </div>
+            <div>
+              <% for(let armor of armors) { %>
+                <%if (armor.id == build.helm) {%>
+                  <p><%= armor.name %></p>
+                  <img id="armorImg" src="<%= armor.image %>" alt="Armor Image">
+                <%}%>
+                <%if (armor.id == build.chestArmor) {%>
+                  <p><%= armor.name %></p>
+                  <img id="armorImg" src="<%= armor.image %>" alt="Armor Image">
+                <%}%>
+                <%if (armor.id == build.legArmor) {%>
+                  <p><%= armor.name %></p>
+                  <img id="armorImg" src="<%= armor.image %>" alt="Armor Image">
+                <%}%>
+                <%if (armor.id == build.gauntlets) {%>
+                  <p><%= armor.name %></p>
+                  <img id="armorImg" src="<%= armor.image %>" alt="Armor Image">
+                <%}%>
+              <%}%>
+              <% for(let weapon of weapons) { %>
+                <%if (weapon.id == build.weapons) {%>
+                  <p><%= weapon.name %></p>
+                  <img id="weaponImg" src="<%= weapon.image %>" alt="Weapon Image">
+                <%}%>
+              <%}%>
+              </div>
+            </div>
+          <% if(x % 3 === 0 || x === builds.length) { %>
+            </div>
+          <% } %>
+          <% x++ %>
+      <%}%>
+    </div>
+
+
+        <div class="modal fade" id="buildModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel"> Your Build</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+              <form method="POST" action="/builds" autocomplete="off">
+                <div id="buildInfo">
+                  <label>
+                    Choose Helm:
+                    <select name="helm">
+                        <option value = "" selected>- Select One -</option>
+                        <% for(let armor of armors){ %>
+                          <% if (armor.category == "Helm") {%>
+                            <option value="<%= armor.id %>"><%=armor.name%></option>
+                          <%}%>
+                        <%}%>
+                      </select>
+                    </label>
+                  </label>
+                  <br><br>
+                  <label>
+                    Choose Chest Armor:
+                    <select name="chestArmor">
+                      <option value = "" selected>- Select One -</option>
+                      <% for(let armor of armors){ %>
+                        <% if (armor.category == "Chest Armor") {%>
+                          <option value="<%= armor.id %>"><%=armor.name%></option>
+                        <%}%>
+                      <%}%>
+                    </select>
+                  </label>
+                  <br><br>
+                  <label>
+                    Choose Gauntlets:
+                    <select name="gauntlets">
+                      <option value = "" selected>- Select One -</option>
+                      <% for(let armor of armors){ %>
+                          <% if (armor.category == "Gauntlets") {%>
+                          <option value="<%= armor.id %>"><%=armor.name%></option>
+                        <%}%>
+                      <%}%>
+                    </select>
+                  </label>
+                  <br><br>
+                  <label>
+                    Choose leg Armor:
+                    <select name="legArmor">
+                      <option value = "" selected>- Select One -</option>
+                      <% for(let armor of armors){ %>
+                        <% if (armor.category == "Leg Armor") {%>
+                          <option value="<%= armor.id %>"><%=armor.name%></option>
+                        <% }} %>
+                    </select>
+                  </label>
+                  <br><br>
+                  <label>
+                    Choose Weapon:
+                    <select name="weapon" >
+                      <option value = "" selected>- Select One -</option>
+                      <% for(let weapon of weapons){ %>
+                          <option value="<%= weapon.id %>"><%=weapon.name%></option>
+                        <% } %>
+                    </select>
+                  </label>
+                          <button class="btn btn-secondary">Save</button>
+                          </form>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <script>
+        const myModal = new bootstrap.Modal(document.getElementById('buildModal'))
+
+        async function displaybuildInfo(){
+          myModal.show();
+        }
+      </script>
+
+  <br><br>
+  <%- include("partials/loginFooter.ejs") %>
+
+</body>
+</html>
