@@ -14,10 +14,9 @@ A full-stack web application that helps players track their progress in **Elden 
 
 - **Frontend:** HTML, CSS, JavaScript  
 - **Backend:** Node.js, Express  
-- **Database:** (Add this if you used MongoDB, PostgreSQL, etc.)  
-- **APIs:** Elden Ring public REST API  
-- **Deployment:** Heroku  
-- **Version Control:** Git & GitHub
+- **Database:** Heroku 
+- **APIs:** Elden Ring public REST API
+- **Version Control:** replit
 
 ## 🔧 Installation
 
